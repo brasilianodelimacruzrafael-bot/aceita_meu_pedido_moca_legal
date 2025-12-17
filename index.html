@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Oi</title>
+
+<style>
+body {
+  margin: 0;
+  background: #111;
+  color: white;
+  font-family: Arial, sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  text-align: center;
+  max-width: 90%;
+}
+button {
+  margin-top: 20px;
+  padding: 14px 28px;
+  font-size: 18px;
+  border: none;
+  border-radius: 12px;
+  background: #ff4d6d;
+  color: white;
+}
+</style>
+</head>
+
+<body>
+<div class="container" id="app">
+  <h1>Ei>Ei>E
+  <p> Mabi, eu preciso te dizer uma coisa.</p>
+  <button onclick="p2()">Continuar</button>
+</div>
+
+<script>
+const app = document.getElementById("app");
+
+function p2() {
+  app.innerHTML = `
+    <p>tô brincando.</p>
+    <button onclick="p3()">Continuar</button>
+  `;
+}
+
+function p3() {
+  app.innerHTML = `
+    <h1>Eu adoro você.</h1>
+    <p>Quer namorar comigo?</p>
+    <button onclick="sim()">Sim ❤️</button>
+    <button id="nao">Não</button>
+  `;
+
+  const nao = document.getElementById("nao");
+  nao.onmouseover = fugir;
+  nao.ontouchstart = fugir;
+
+  function fugir() {
+    nao.style.position = "absolute";
+    nao.style.left = Math.random() * 70 + "%";
+    nao.style.top = Math.random() * 70 + "%";
+  }
+}
+
+function sim() {
+  app.innerHTML = `
+    <h1>❤️</h1>
+    <p>Eu gosto muito de você.</p>
+  `;
+}
+</script>
+</body>
+</html>
